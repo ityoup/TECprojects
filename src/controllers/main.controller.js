@@ -1,3 +1,3 @@
 export const raiz = (req, res)=>{
-    res.render('view')
+    res.render('HUB')
 }
