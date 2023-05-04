@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos</title>
+</head>
+
+<body style="background-image: url(https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2017/03/color-degradado-fondos-degradados-multicolor-51200.jpg?fit=1920%2C1200&quality=50&strip=all&ssl=1)">
+    <div class="contGeneral">
+        <!--Contenedor de la primera parte-->
+        <div class="centerCard">
+            <div class="cont1">
+                <!--Primera card-->
+
+                <div id="card1" style="border-radius: 30px;" class="card">
+                    <div class="card-body">
+                        <div class="imagen card-image-top">
+                            <img src="https://avatars.githubusercontent.com/u/73605425?v=4" alt="">
+                        </div>
+                        <div style="display: flex; justify-content: right; position: absolute; right: 3em;" class="bandera">
+                            <img style="width: 80px; " src="https://www.banderas-mundo.es/data/flags/emoji/facebook/256x256/mx.png" alt="">
+                        </div>
+                        <div id="iconos" style="position: absolute; top: 6.5em; left: 2.2em;" class="icons">
+                           <a style="text-decoration: none; color: black;" href="https://github.com/ityoup" target="_blank"><i class="bi bi-github"></i></a>
+                            <i class="bi bi-discord"></i>
+                            <a style="text-decoration: none; color: black;" href="https://www.linkedin.com/in/juan-carlos-lizarraga-25029b23a/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                            <a style="text-decoration: none; color: black;" href="https://www.instagram.com/j.c_liz/" target="_blank"><i class="bi bi-instagram"></i></a>
+                        </div>
+                        <div class="contenido">
+                            <div class="textoNom">
+                            <h5 class="card-title" style="position: absolute; top: 4em; left: 10em;">Juan Carlos
+                            
+                                <br>Lizarraga</h5></div>
+                           <div style="position: absolute; left: 13.3em; top: 11em; bottom: 3em ;font-size: 15px;">  
+                            <p style="font-family: 'Source Code Pro', monospace;">
+                                Hello, I'm Juan Currently working as web developer
+
+                                <br> Name: Juan Carlos
+                                <br> Age: 22
+                                <br> Hobbies: Programming, watch series, Study & Read
+                            </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Contenedor de la parte derecha-->
+        <div class="center">
+            <div class="cont2">
+                <a style="text-decoration: none; color: black;" href="https://juancarlossite.netlify.app/" target="_blank">
+                <div style="border-radius: 30px;" class="card">
+                    <div class="card-body">
+                        <div class="iconoCards2" >
+                            <h5 class="card-title">Contador de clicks</h5>
+                            
+                            <i style="font-size: 50px ;" class="bi bi-mouse2"></i>
+                        
+                        <p class="card-text">Uso del dom para modificar textos y parametros en el html</p>
+                    </div>
+                    </div>
+                </div>
+            </a>
+           <a style="text-decoration: none; color: black;" href="http://3.135.144.139/Contador/" target="_blank">
+                <div style="border-radius: 30px;" class="card">
+                    <div class="card-body">
+                        <div class="iconoCards2" >
+                            <h5 class="card-title">Comprar productos</h5>
+                            
+                            <i style="font-size: 50px ;" class="bi bi-cart"></i>
+                        
+                        <p class="card-text">Uso del dom para seleccionar y añadir efectos con un click</p>
+                    </div>
+                    </div>
+                </div>
+                </a>
+<a style="text-decoration: none; color: black;" href="http://74.208.35.203:4000/alumnos" target="_blank">
+                <div style="border-radius: 30px;" class="card">
+                    <div class="card-body">
+                        <div class="iconoCards3" >
+                            <h5 class="card-title">CRUD EXPRESS</h5>
+                            
+                            <i style="font-size: 50px ;" class="bi bi-smartwatch"></i>
+                        
+                        <p class="card-text" >Uso de ExpressJS, Javascript, Ejs y MySQL para ingresar usuarios (Concluido, falta montar)</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</a>
+
+    </div>
+    <!--Aqui empieza el segundo contenedor-->
+</body>
+<style>
+.card{
+box-shadow: 5px 1px 30px -10px grey;
+}
+    @media screen and (max-width: 600px) {
+  
+
+  .contenido p{
+    font-size: 11px;
+    position: relative;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .bandera img{
+    scale: 0.5;
+    position: absolute;
+    right: -3em;
+    top:  -2em;
+  }
+  
+  .cont1{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .imagen{
+    scale: 0.8;
+    position: absolute;
+    right: 22em;
+  }
+  #iconos{
+    scale: 1.2;
+    
+  }
+  .cont2{
+    width: 100%;
+    gap: 15px;
+  }
+
+  .card-text{
+    font-size: 12px;
+  }
+
+  .iconoCards3 h5{
+   
+    font-size: 15px;
+  }
+
+  .iconoCards3 p{
+   
+    font-size: 11px;
+  }
+  
+ 
+  
+}
+
+
+</style>
+</html>

@@ -1,3 +1,3 @@
 export const raiz = (req, res)=>{
-    res.send('pong')
+    res.render('1view')
 }
