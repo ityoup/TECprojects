@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background: rgb(56, 56, 56);">
+    <div style="display: grid; justify-content: center;">
+   <h1 style="color: white;">Subir imagen</h1> <br>
+   <form action="/upload" enctype="multipart/form-data" method="post">
+    <div class="form-group">
+      <input style="color: white;" type="file" class="form-control-file" name="subirArchivo"> <br> 
+      <input type="number" class="form-control" placeholder="Cantidad de imagenes a subir" name="Album"> <br> <br>
+      <input type="submit" value="Aceptar" class="btn btn-primary">            
+    </div>
+  </form>
+</div>
+
+<div style="display: grid; justify-content: center; margin: 50px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px;"> 
+        <% resultados.forEach((imagenes) =>{ %>
+  <div class="card" style="margin: 10px; width: 20em; height: 25em; ">
+    <img style="height: 10em;" class="card-img-top" src="http://localhost:3000/<%= imagenes.imagenes %>" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+
+  <% }) %>
+</div>
+</div>
+</body>
+</html>
