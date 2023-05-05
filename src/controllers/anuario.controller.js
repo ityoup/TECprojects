@@ -5,6 +5,10 @@ export const subirImagen = async (req, res) => {
     res.render('subirImagen', { resultados: resultados })
 }
 
+export const loginAnuario = async (req, res) => {  
+    res.render('login')
+}
+
 export const anuario = async (req, res) => {
 
     //Se busca dentro de la base de datos que valor 
