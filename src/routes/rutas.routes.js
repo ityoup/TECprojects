@@ -1,4 +1,5 @@
 import { Router } from "express";
+import exif from "exif";
 import { con } from "../controllers/db.js";
 import { raiz } from "../controllers/main.controller.js";
 import { subirImagen, anuario } from "../controllers/anuario.controller.js";
