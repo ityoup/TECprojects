@@ -3,6 +3,7 @@ import exif from "exif";
 import { con } from "../controllers/db.js";
 import { raiz } from "../controllers/main.controller.js";
 import { subirImagen, anuario, loginAnuario } from "../controllers/anuario.controller.js";
+import { credenciales } from "../controllers/login.controller.js";
 import multer from "multer";
 const subida = multer({ dest: 'public/' })
 const rutas = Router();
@@ -14,6 +15,8 @@ rutas.get('/', raiz);
 rutas.get('/subirImagen', subirImagen);
 
 rutas.get('/login', loginAnuario);
+
+rutas.post('/loginCredenciales', credenciales)
 
 //Post para la subida de archivos junto con multer
 rutas.post('/upload', subida.single('subirArchivo'), function (req, res, next) {
