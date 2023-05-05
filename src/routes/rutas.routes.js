@@ -26,6 +26,7 @@ rutas.post('/upload', subida.single('subirArchivo'), function (req, res, next) {
    }
 })
 
+rutas.get('/anuario', anuario)
 
 
 export default rutas;
