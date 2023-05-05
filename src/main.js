@@ -1,5 +1,6 @@
 import express from "express";
 import ejs from "ejs";
+import exif from "exif";
 const app = express();
 const port = 3000;
 import rutas from "../src/routes/rutas.routes.js";
