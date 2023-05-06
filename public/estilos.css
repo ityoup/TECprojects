@@ -1,0 +1,80 @@
+.contGeneral {
+
+    margin: 20px;
+}
+
+.cont1 {
+    width: 60%;
+    height: 20em;
+    margin: 40px;
+}
+
+.cont2 {
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+
+}
+
+.icons {
+    font-size: 30px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 8px;
+
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translate(2px, -2px);
+}
+
+.card {
+    height: 200px;
+}
+
+
+.imagen img {
+    position: absolute;
+    left: 31px;
+    width: 10em;
+    border-radius: 90px;
+}
+
+.centerCard {
+    display: flex;
+    justify-content: center;
+
+}
+
+#card1 {
+    height: 20em;
+    transition: 0.2s;
+    box-shadow: 5px 1px 30px 2px grey;
+
+}
+
+#card1:hover {
+    transform: translate(2px, -2px);
+    transition: box-shadow -5px 10px 5px;
+}
+
+.card {
+    box-shadow: 5px 1px 30px 2px grey;
+}
