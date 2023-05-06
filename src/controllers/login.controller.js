@@ -29,6 +29,8 @@ export const credenciales = async (req, res) => {
 
     } else if (coincidenciasUser == "no_Encontrado") {
         console.log("no hay coincidencias")
+        res.redirect('/login');
+
     }
 
 
