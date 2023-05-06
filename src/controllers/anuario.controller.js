@@ -1,8 +1,6 @@
 import { con } from "../controllers/db.js";
 
 export const subirImagen = async (req, res) => {
-    req.session.cuenta = req.session.cuenta ? req.session.cuenta + 1 : 1;
-    console.log(req.session.cuenta)
     const [resultados] = await con.query("Select * from imagenes");
     res.render('subirImagen', { resultados: resultados })
 }
