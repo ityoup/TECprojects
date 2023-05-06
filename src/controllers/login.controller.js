@@ -1,5 +1,5 @@
 import { con } from "./db.js";
-import session from "express-session";
+
 
 export const credenciales = async (req, res) => {
     let user;
@@ -25,7 +25,7 @@ export const credenciales = async (req, res) => {
 
         } else if (coincidenciasPass == "no_Encontrado") {
             console.log("contraseña incorrecta");
-            res.redirect('/subirImagen');
+            res.redirect('/login');
 
 
         }
