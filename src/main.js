@@ -4,9 +4,10 @@ import exif from "exif";
 import rutas from "../src/routes/rutas.routes.js";
 const app = express();
 const port = 5000;
+app.use(express.static('public'));
 app.use(express.urlencoded( { extended: false } ));
 
-app.use(express.static('public'));
+
 
 
 
