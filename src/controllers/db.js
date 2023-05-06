@@ -6,5 +6,5 @@ export const con = createPool({
     user: 'root',
     password: 'WILDones123',
     port: '3306',
-    database: 'anuario'
+    database: 'alumnos'
 })

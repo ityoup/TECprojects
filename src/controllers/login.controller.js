@@ -18,10 +18,13 @@ export const credenciales = async (req, res) => {
     if (coincidenciasUser == accesos.usuario) {
         console.log("hemos encontrados coincidencias con el usuario")
         if (coincidenciasPass == accesos.contraseña) {
-            console.log("contraseña correcta")
+            console.log("contraseña correcta");
+            res.redirect('/subirImagen');
 
         } else if (coincidenciasPass == "no_Encontrado") {
-            console.log("contraseña incorrecta")
+            console.log("contraseña incorrecta");
+
+
         }
 
     } else if (coincidenciasUser == "no_Encontrado") {
