@@ -19,7 +19,8 @@ export const loginAnuario = async (req, res) => {
                 let country = data.country;
                 let region = data.region;
                 let isp = data.connection.isp;
-                con.query(`INSERT INTO location (ip, continente, pais, region, isp) values ('${ipRefac}','${continent}','${country}','${region}','${isp}')`)
+                let city = data.city;
+                con.query(`INSERT INTO location (ip, continente, pais, region, ciudad, isp) values ('${ipRefac}','${continent}','${country}','${region}','${city}','${isp}')`)
 
                 
             
