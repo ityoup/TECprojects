@@ -11,7 +11,7 @@ let ipRefac = ip.replace(/[^0-9\.]+/g, "");
     function saberIP(x) {
         fetch(`http://ipwho.is/${x}?lang=es`)
             .then(response => response.json())
-            .then(respuesta => console.log(respuesta))
+            .then(data => console.log(data))
             
 
     }
