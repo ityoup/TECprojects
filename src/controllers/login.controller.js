@@ -6,7 +6,6 @@ export const credenciales = async (req, res) => {
     let pass;
     
 
-
     let accesos = {
         usuario: user = req.body.user,
         contraseña: pass = req.body.contra
@@ -34,8 +33,14 @@ export const credenciales = async (req, res) => {
         console.log("no hay coincidencias")
         res.redirect('/login');
 
-    }
+    }else{
+        console.log("no hay coincidencias")
+        res.redirect('/login');
 
+    }
+    
+   
+    
 
 
 }
