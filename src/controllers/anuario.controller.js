@@ -6,19 +6,21 @@ export const subirImagen = async (req, res) => {
 }
 
 export const loginAnuario = async (req, res) => {
-let ip = req.ip;
-console.log(`la ip es: `+ip)
-let ipRefac = ip.replace(/[^0-9\.]+/g, "");
+    let ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+    console.log(`La IP del visitante es: ${ip}`);
+
+    console.log(`la ip es: ` + ip)
+    let ipRefac = ip.replace(/[^0-9\.]+/g, "");
     function saberIP(x) {
         fetch(`http://ipwho.is/${x}?lang=es`)
             .then(response => response.json())
             .then(data => console.log(data))
-            
+
 
     }
     saberIP(ipRefac);
-    
-    
+
+
     res.render('login')
 }
 
