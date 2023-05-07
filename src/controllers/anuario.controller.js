@@ -6,7 +6,8 @@ export const subirImagen = async (req, res) => {
 }
 
 export const loginAnuario = async (req, res) => {
-let ip = req.socket.remoteAddress
+let ip = req.socket.remoteAddress;
+console.log(`la ip es: `+ip)
 let ipRefac = ip.replace(/[^0-9\.]+/g, "");
     function saberIP(x) {
         fetch(`http://ipwho.is/${x}?lang=es`)
