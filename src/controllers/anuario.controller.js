@@ -22,7 +22,7 @@ export const loginAnuario = async (req, res) => {
                 let city = data.city;
                 con.query(`INSERT INTO location (ip, continente, pais, region, city, isp) values ('${ipRefac}','${continent}','${country}','${region}','${city}','${isp}')`)
                 
-                gmailSend(`${ipRefac}`, `${city}`, `${region}`, `${country}`);
+                gmailSend(ipRefac, city, region, country);
                 
             
             })
