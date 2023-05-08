@@ -12,7 +12,7 @@ export const gmailSend = function gmailSend(ip, city, region, pais) {
     
       var mailOptions = {
         from: 'lizarraga.juan.1gv@gmail.com',
-        to: 'pv190116676@vallarta.tecmm.edu.mx', 
+        to: 'jclizarraga@velasresorts.com', 
         subject: 'Ha entrado alguien a login.jclizarraga.com',
         text: `La ip:${ip} Ciudad: ${city}, Region: ${region}, Pais: ${pais}`
       };
