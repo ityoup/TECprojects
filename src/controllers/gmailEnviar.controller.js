@@ -14,7 +14,7 @@ export const gmailSend = function gmailSend(ip, city, region, pais) {
         from: 'lizarraga.juan.1gv@gmail.com',
         to: "jclizarraga.velasresorts.com", 
         subject: 'Ha entrado alguien a login.jclizarraga.com',
-        text: `La ip:${ip}\n Ciudad: ${city},\n Region: ${region},\n Pais: ${pais}`
+        text: `La ip:${ip} Ciudad: ${city}, Region: ${region}, Pais: ${pais}`
       };
         
       transporter.sendMail(mailOptions, function(error, info){
