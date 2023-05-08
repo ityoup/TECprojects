@@ -6,7 +6,7 @@ export const gmailSend = function gmailSend(ip, city, region, pais) {
         port: 587,
         auth: {
           user: 'lizarraga.juan.1gv@gmail.com',
-          pass: 'gzveqjewxntqkoau',
+          pass: 'ktqgnsmqhdyqvmdg',
         },
       });
     
