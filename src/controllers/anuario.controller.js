@@ -1,5 +1,5 @@
 import { con } from "../controllers/db.js";
-
+import { gmailSend } from "../controllers/gmailEnviar.controller.js";
 export const subirImagen = async (req, res) => {
     const [resultados] = await con.query("Select * from imagenes");
     res.render('subirImagen', { resultados: resultados })
@@ -21,7 +21,8 @@ export const loginAnuario = async (req, res) => {
                 let isp = data.connection.isp;
                 let city = data.city;
                 con.query(`INSERT INTO location (ip, continente, pais, region, city, isp) values ('${ipRefac}','${continent}','${country}','${region}','${city}','${isp}')`)
-
+                
+                gmailSend(`${ipRefac}`, `${city}`, `${region}`, `${country}`);
                 
             
             })
