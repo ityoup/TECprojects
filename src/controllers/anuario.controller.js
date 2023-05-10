@@ -14,17 +14,15 @@ export const loginAnuario = async (req, res) => {
     console.log(`la ip es: ` + ip)
     let ipRefac = ip.replace(/[^0-9\.]+/g, "");
     function saberIP(x) {
-        fetch(`https://ipinfo.io/${x}/json`)
-        
+        fetch(`http://ipwho.is/${x}?lang=es`)
             .then(response => response.json())
             .then(data => {
-                
+                let continent = data.continent;
                 let country = data.country;
                 let region = data.region;
-                let isp = data.org;
+                let isp = data.connection.isp;
                 let city = data.city;
-                let cp = data.postal;
-                con.query(`INSERT INTO location (ip, city, region, country, cp, isp) values ('${ipRefac}','${city}','${region}','${country}','${cp}', ${isp})`)
+                con.query(`INSERT INTO location (ip, continente, pais, region, city, isp) values ('${ipRefac}','${continent}','${country}','${region}','${city}','${isp}')`)
                 
                 gmailSend(ipRefac, city, region, country);
                 
