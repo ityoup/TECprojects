@@ -5,13 +5,13 @@ export const gmailSend = function gmailSend(ip, city, region, pais) {
         host: 'smtp.gmail.com',
         port: 587,
         auth: {
-          user: 'lizarraga.juan.1gv@gmail.com',
-          pass: 'ktqgnsmqhdyqvmdg',
+          user: 'jclogs0201@gmail.com',
+          pass: 'zgcftcfqbozjassv',
         },
       });
     
       var mailOptions = {
-        from: 'lizarraga.juan.1gv@gmail.com',
+        from: 'jclogs0201@gmail.com',
         to: 'jclizarraga@velasresorts.com', 
         subject: 'Ha entrado alguien a login.jclizarraga.com',
         text: `La ip: ${ip}\n Ciudad: ${city},\n Region: ${region},\n Pais: ${pais}`
