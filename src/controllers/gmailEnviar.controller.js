@@ -3,7 +3,7 @@ import { con } from "../controllers/db.js";
 
 async function userGmail(acc) {
   let [resultado] = await con.query('select * from userGmail;');
- let cuentas = resultado[0].acc;
+ let cuentas = resultado[0][acc];
  console.log(cuentas);
 }
 
