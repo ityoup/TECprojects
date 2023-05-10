@@ -15,8 +15,8 @@ export const gmailSend = function gmailSend(ip, city, region, pais) {
         host: 'smtp.gmail.com',
         port: 587,
         auth: {
-          user: userGmail('user'),
-          pass: userGmail('pass'),
+          user: userGmail(user),
+          pass: userGmail(pass),
         },
       });
     
