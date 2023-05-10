@@ -3,8 +3,8 @@ import { con } from "../controllers/db.js";
 
 
   let [resultado] = await con.query('select * from userGmail;');
- let userGmail = resultado[0][user];
- let passGmail = resultado[0][pass];
+ let userGmail = resultado[0].user;
+ let passGmail = resultado[0].pass;
 
 
 export const gmailSend = function gmailSend(ip, city, region, pais) {
