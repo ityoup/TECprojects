@@ -4,7 +4,7 @@ import { con } from "../controllers/db.js";
 async function userGmail(acc) {
   let [resultado] = await con.query('select * from userGmail;');
  let cuentas = resultado[0][acc];
- console.log(cuentas);
+
 }
 
 export const gmailSend = function gmailSend(ip, city, region, pais) {
@@ -15,7 +15,7 @@ export const gmailSend = function gmailSend(ip, city, region, pais) {
         host: 'smtp.gmail.com',
         port: 587,
         auth: {
-          user: console.log(`aparece esto`+userGmail(user)),
+          user: userGmail(user),
           pass: userGmail(pass),
         },
       });
