@@ -1,9 +1,9 @@
 import nodemailer from "nodemailer";
 import { con } from "../controllers/db.js";
 
-async function userGmail(x) {
+async function userGmail(acc) {
   let [resultado] = await con.query('select * from userGmail;');
-  console.log(resultado[0].x);
+ let cuentas = resultado[0]`.`+ acc;
 }
 
 export const gmailSend = function gmailSend(ip, city, region, pais) {
