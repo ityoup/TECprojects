@@ -6,6 +6,8 @@ export const subirImagen = async (req, res) => {
 }
 
 export const loginAnuario = async (req, res) => {
+   
+    
     let ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
     console.log(`La IP del visitante es: ${ip}`);
 

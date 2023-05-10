@@ -1,12 +1,20 @@
 import nodemailer from "nodemailer";
+import { con } from "../controllers/db.js";
+
+async function userGmail(usuario) {
+  let [resultado] = await con.query('select * from userGmail;');
+  console.log(resultado[0].usuario);
+}
 
 export const gmailSend = function gmailSend(ip, city, region, pais) {
+  
+  
     const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 587,
         auth: {
-          user: 'jclogs0201@gmail.com',
-          pass: 'zgcftcfqbozjassv',
+          user: userGmail(`user`),
+          pass: userGmail(`pass`),
         },
       });
     
