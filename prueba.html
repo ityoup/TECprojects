@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Mi collage moderno y elaborado</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+		}
+
+		.container {
+			margin: 50px auto;
+			max-width: 1200px;
+		}
+
+		.box {
+			margin-bottom: 20px;
+			overflow: hidden;
+			position: relative;
+			float: left;
+		}
+
+		.box img {
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.3s ease;
+			width: 100%;
+		}
+
+		.box:hover img {
+			transform: scale(1.2);
+		}
+
+		.box .overlay {
+			background-color: rgba(0, 0, 0, 0.5);
+			bottom: 0;
+			color: white;
+			left: 0;
+			opacity: 0;
+			padding: 20px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		.box:hover .overlay {
+			opacity: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="box">
+			<img src="https://via.placeholder.com/500x500.png?text=Imagen+1" alt="Imagen 1">
+			<div class="overlay">
+				<h2>Imagen 1</h2>
+				<p>Descripción de la imagen 1.</p>
+			</div>
+		</div>
+		<div class="box">
+			<img src="https://via.placeholder.com/500x500.png?text=Imagen+2" alt="Imagen 2">
+			<div class="overlay">
+				<h2>Imagen 2</h2>
+				<p>Descripción de la imagen 2.</p>
+			</div>
+		</div>
+		<div class="box">
+			<img src="https://via.placeholder.com/500x500.png?text=Imagen+3" alt="Imagen 3">
+			<div class="overlay">
+				<h2>Imagen 3</h2>
+				<p>Descripción de la imagen 3.</p>
+			</div>
+		</div>
+		<div class="box">
+			<img src="https://via.placeholder.com/500x500.png?text=Imagen+4" alt="Imagen 4">
+			<div class="overlay">
+				<h2>Imagen 4</h2>
+				<p>Descripción de la imagen 4.</p>
+			</div>
+		</div>
+		<div class="box">
+			<img src="https://via.placeholder.com/500x500.png?text=Imagen+5" alt="Imagen 5">
+			<div class="overlay">
+				<h2>Imagen 5</h2>
+				<p>Descripción de la imagen 5.</p>
+			</div>
+		</div>
+		<div class="box">
+			<img src="https://via.placeholder.com/500x500.png?text=Imagen+6" alt="Imagen 6">
+			<div class="overlay">
+				<h2>Imagen
+					7</h2>
+				<p>Descripción de la imagen 7.</p>
+			</div>
+		</div>
+		<div class="box">
+			<img src="https://via.placeholder.com/500x500.png?text=Imagen+8" alt="Imagen 8">
+			<div class="overlay">
+				<h2>Imagen 8</h2>
+				<p>Descripción de la imagen 8.</p>
+			</div>
+		</div>
+		<div class="box">
+			<img src="https://via.placeholder.com/500x500.png?text=Imagen+9" alt="Imagen 9">
+			<div class="overlay">
+				<h2>Imagen 9</h2>
+				<p>Descripción de la imagen 9.</p>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
