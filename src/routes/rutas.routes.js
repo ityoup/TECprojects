@@ -4,12 +4,19 @@ import { con } from "../controllers/db.js";
 import { raiz } from "../controllers/main.controller.js";
 import { subirImagen, anuario, loginAnuario } from "../controllers/anuario.controller.js";
 import { credenciales } from "../controllers/login.controller.js";
+import { getViewRegister, getViewHubAlumno, postRegister } from "../controllers/registrarDatos.controller.js";
 import multer from "multer";
 const subida = multer({ dest: 'public/' })
 const rutas = Router();
 
 //Ruta Veterinaria
 rutas.get('/', raiz);
+
+rutas.get('/registerDatos', getViewRegister)
+
+rutas.get('/hubAlumno', getViewHubAlumno)
+
+rutas.post('/acti', postRegister)
 
 //Ruta para subir imagenes al anuario
 rutas.get('/subirImagen', subirImagen);
