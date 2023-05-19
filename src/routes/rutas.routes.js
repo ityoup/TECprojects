@@ -6,7 +6,8 @@ import { subirImagen, anuario, loginAnuario } from "../controllers/anuario.contr
 import { credenciales } from "../controllers/login.controller.js";
 import { getViewRegister, getViewHubAlumno } from "../controllers/registrarDatos.controller.js";
 import multer from "multer";
-const subida = multer({ dest: 'public/profilePic' })
+const subida = multer({ dest: 'public/' })
+const pfp = multer({ dest: 'public/profilePic' })
 const rutas = Router();
 
 //Ruta Veterinaria
@@ -16,7 +17,7 @@ rutas.get('/registerDatos', getViewRegister)
 
 rutas.get('/hubAlumno', getViewHubAlumno)
 
-rutas.post('/acti', subida.single('pfp'), function (req, res, next){
+rutas.post('/acti', pfp.single('pfp'), function (req, res, next){
   
    console.log(req.file.filename);
 
