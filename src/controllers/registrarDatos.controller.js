@@ -1,5 +1,9 @@
 import { con } from "../controllers/db.js";
 
+import multer from "multer";
+const fotoPerfil = multer({ dest: 'public/img' })
+
+
 export const getViewRegister =  async (req ,res)=>{
     let [resultado] = await con.query('select nombre from maestrosFotos');
     let [fotos] = await con.query('select imagen from maestrosFotos')
@@ -18,14 +22,4 @@ export const getViewHubAlumno = async (req ,res)=>{
 }
 
 
-export const postRegister =  (req ,res)=>{
-    let semestre = req.body.semestre;
-    let materiaFav = req.body.mateFav;
-    let maestroFav = req.body.maestroFav;
-    let tecUni = req.body.tecUni;
-    let ciudad = req.body.ciudad;
-    let numTel = req.body.numTel;
-    let birthday = req.body.birthday;
 
-    console.log(req.body)
-}

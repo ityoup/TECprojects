@@ -10,34 +10,23 @@
     <title>Document</title>
 </head>
 
-<body>
+<body style="padding: 20px;">
     <div class="container-xl px-4 mt-4">
         <!-- Account page navigation-->
-        <nav class="nav nav-borders">
-            <a class="nav-link active ms-0"
-                href="https://www.bootdey.com/snippets/view/bs5-edit-profile-account-details"
-                target="__blank">Profile</a>
-            <a class="nav-link" href="https://www.bootdey.com/snippets/view/bs5-profile-billing-page"
-                target="__blank">Billing</a>
-            <a class="nav-link" href="https://www.bootdey.com/snippets/view/bs5-profile-security-page"
-                target="__blank">Security</a>
-            <a class="nav-link" href="https://www.bootdey.com/snippets/view/bs5-edit-notifications-page"
-                target="__blank">Notifications</a>
-        </nav>
-        <hr class="mt-0 mb-4">
+        <form action="/acti" enctype="multipart/form-data" method="post">
         <div class="row">
             <div class="col-xl-4">
                 <!-- Profile picture card-->
-                <div style="border-radius: 30px;" class="card mb-4 mb-xl-0">
-                    <div class="card-header">Profile Picture</div>
+                <div id="pfpDiv" style="border-radius: 30px; padding: 20px;" class="card mb-4 mb-xl-0">
+                    <div><h4 style="text-align: center;">Foto de perfil</h4></div>
                     <div id="displayImage" class="card-body text-center">
                         <!-- Profile picture image-->
                         <img style="width: 45%;" id="profilePicture" class="img-account-profile rounded-circle mb-2"
-                            src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                            src="https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg" alt="">
                         <!-- Profile picture help block-->
                         <div class="small font-italic text-muted mb-4">JPG o PNG no más grandes de 5 MB</div>
                         <!-- Profile picture upload button-->
-                        <input class="form-control form-control-lg" id="formFileLg" type="file">
+                        <input  type="file" id="formFileLg" class="custom-file-input" name="pfp">
                     </div>
                 </div>
 
@@ -66,10 +55,10 @@
             </div>
             <div class="col-xl-8">
                 <!-- Account details card-->
-                <div style="border-radius: 30px;" class="card mb-4">
-                    <div class="card-header">Account Details</div>
+                <div id="infoDiv" style="border-radius: 30px; padding: 50px;" class="card mb-4">
+                    <div><h4 style="text-align: center;">Cuentanos un poco de ti</h4></div>
                     <div class="card-body">
-                        <form action="/acti" method="post">
+                        
                             <!-- Form Group (username)-->
                             <div class="mb-3">
                                 <label class="small mb-1" for="inputUsername">¿Cuál es tu semestre?</label>
@@ -89,7 +78,7 @@
                                     <label class="small mb-1" for="inputFirstName">Maestros favoritos</label>
                                     <select name="maestroFav" class="form-select" aria-label="Default select example">
                                         <% for(var i=0; i < resultado.length; i++) { %>
-                                            <option data-thumbnail="https://lh3.googleusercontent.com/a-/ACB-R5T74uDsvnWkqrTSYLnlvtbf9uwlB481MVMtpKJA=s75-c"><%= resultado[i].nombre %></option>
+                                            <option data-="https://lh3.googleusercontent.com/a-/ACB-R5T74uDsvnWkqrTSYLnlvtbf9uwlB481MVMtpKJA=s75-c"><%= resultado[i].nombre %></option>
                                          <% } %>
                                       </select>
                                     <!-- <label class="small mb-1" for="inputLastName">Maestros favoritos</label>
@@ -134,7 +123,8 @@
                                 </div>
                             </div>
                             <!-- Save changes button-->
-                            <button style="border-radius: 20px;" class="btn btn-danger" type="submit">Guardar</button>
+                            
+                            <button style="border-radius: 20px; scale: 1.2; " class="btn btn-danger" type="submit">Guardar</button>
                         </form>
                     </div>
                 </div>
@@ -143,10 +133,25 @@
     </div>
 </body>
 <style>
+
+    #infoDiv{
+        transition: transform 250ms;
+    }
+
+    #infoDiv:hover{
+        transform: translateY(-8px);
+    }
+    
+    #pfpDiv{
+        transition: transform 250ms;
+    }
+    #pfpDiv:hover{
+        transform: translateY(-8px);
+    }
     body {
         margin-top: 20px;
-        background-color: #f2f6fc;
-        color: #69707a;
+      
+        
     }
 
     .img-account-profile {
