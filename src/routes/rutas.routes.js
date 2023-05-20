@@ -10,14 +10,37 @@ const subida = multer({ dest: 'public/' })
 const pfp = multer({ dest: 'public/profilePic' })
 const rutas = Router();
 
+import session from 'express-session';
+import cookieParser from 'cookie-parser';
+
+rutas.use(cookieParser());
+rutas.use(session({
+  secret: 'mi-secreto-super-seguro', // Cambia esto por una cadena de caracteres segura
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    secure: false, // Establece esto a "true" si usas HTTPS
+    maxAge: 3600000, // Tiempo de vida de la cookie de sesión en milisegundos
+  }
+}));
+
+function requireLogin(req, res, next) {
+  if (req.session && req.session.loggedIn) {
+    // El usuario ha iniciado sesión, continúa con la siguiente ruta o middleware
+    next();
+  } else {
+    // El usuario no ha iniciado sesión, redirige al formulario de inicio de sesión
+    res.redirect('/login');
+  }
+}
 //Ruta Veterinaria
 rutas.get('/', raiz);
 
-rutas.get('/registerDatos', getViewRegister)
+rutas.get('/registerDatos',requireLogin ,getViewRegister)
 
-rutas.get('/hubAlumno', getViewHubAlumno)
+rutas.get('/hubAlumno',requireLogin ,getViewHubAlumno)
 
-rutas.post('/acti', pfp.single('pfp'), function (req, res, next){
+rutas.post('/acti', requireLogin, pfp.single('pfp'), function (req, res, next){
   
    console.log(req.file.filename);
 
@@ -41,7 +64,7 @@ rutas.post('/acti', pfp.single('pfp'), function (req, res, next){
 })
 
 //Ruta para subir imagenes al anuario
-rutas.get('/subirImagen', subirImagen);
+rutas.get('/subirImagen',requireLogin ,subirImagen);
 
 rutas.get('/login', loginAnuario);
 
