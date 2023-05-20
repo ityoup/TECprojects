@@ -40,6 +40,7 @@ export const credenciales = async (req, res) => {
             console.log(fotos[0].imagen)
 
             console.log(resultado[0].nombre);
+            
             res.render("registerDatos/registerDatos", { resultado, fotos, semestre, materiasFav, maestrosFav, tecUni, ciudad, email, numTel, cumple })
 
             
