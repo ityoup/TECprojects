@@ -108,7 +108,13 @@ body {
   background-color: #4c49ea;
 }
 
+.ag-courses_item{
+  transition: transform 250ms;
+}
 
+.ag-courses_item:hover{
+  transform: translateY(-8px);
+}
 
 @media only screen and (max-width: 979px) {
   .ag-courses_item {
