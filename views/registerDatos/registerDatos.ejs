@@ -2,68 +2,302 @@
 <html lang="en">
 
 <head>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+   <div style="display: grid; justify-content: center">
+        <header  class="site__header">
+          <h1 class="brand">Tec<span class="brand--point">Vallarta</span></h1>
+          <nav>
+            <ul class="menu">
+              <li><a class="active" href="#">INICIO</a></li>
+              <li><a href="#">EXPLORAR</a></li>
+              <li><a href="#">MI PERFIL</a></li>
+              <li><a href="#">AJUSTES</a></li>
+              <li><a href="#">SALIR</a></li>
+            </ul>
+          </nav>
+          <div class="toggle">
+            <span class="toggle--switch"></span>
+          </div>
+        </header>
+    </div>
+      <br>
+      <style>
+        @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.site__header {
+  background-color: white;
+  padding: 0 2rem;
+  width: 768px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  -webkit-transition: all 0.25s cubic-bezier(0.42, 0, 0, 1);
+  transition: all 0.25s cubic-bezier(0.42, 0, 0, 1);
+  -webkit-box-shadow: 0px 2px 4px -1px #0000000f, 0px 4px 6px -1px #0000001a;
+  box-shadow: 0px 2px 4px -1px #0000000f, 0px 4px 6px -1px #0000001a;
+}
+
+.site__header.darkmode {
+  background-color: #1f2937;
+  color: white;
+}
+
+.site__header.darkmode .menu li a {
+  color: white;
+}
+
+.site__header.darkmode .menu li a:hover {
+  color: #3b82f6;
+}
+
+.site__header.darkmode .menu li a.active:hover {
+  color: white;
+}
+
+.brand {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.brand--point {
+  color: #fc5757;
+}
+
+.menu {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 64px;
+}
+
+.menu li {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  -webkit-transition: all 0.25s cubic-bezier(0.42, 0, 0, 1);
+  transition: all 0.25s cubic-bezier(0.42, 0, 0, 1);
+  padding: 0 1rem;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.menu li a.active {
+  color: white;
+}
+
+.menu li a.active:hover {
+  color: white;
+}
+
+.menu li a.active:before {
+  background-color: #a50000;
+  z-index: -1;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+}
+
+.menu li a:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: all 0.25s cubic-bezier(0.42, 0, 0, 1);
+  transition: all 0.25s cubic-bezier(0.42, 0, 0, 1);
+}
+
+.menu li a:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 0px;
+  background-color: #ff3434;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.menu li a:hover {
+  color: #3b82f6;
+}
+
+.menu li a:hover:after {
+  width: 100%;
+  height: 4px;
+}
+
+.toggle {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #e5e5e5;
+  width: 38px;
+  height: 22px;
+  border-radius: 22px;
+  cursor: pointer;
+}
+
+.toggle--switch {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 18px;
+  top: 2px;
+  left: 2px;
+  -webkit-transition: all 0.3s cubic-bezier(0.42, 0, 0, 1);
+  transition: all 0.3s cubic-bezier(0.42, 0, 0, 1);
+}
+
+.toggle.active {
+  background-color: #3b82f6;
+}
+
+.toggle.active .toggle--switch {
+  left: calc(100% - 20px);
+}
+
+/*# sourceMappingURL=style.css.map */
+
+      </style>
+      
 </head>
 
-<body style="padding: 20px;">
+<body style="margin: 0;">
+    
     <div class="container-xl px-4 mt-4">
         <!-- Account page navigation-->
         <form action="/acti" enctype="multipart/form-data" method="post">
-        <div class="row">
-            <div class="col-xl-4">
-                <!-- Profile picture card-->
-                <div id="pfpDiv" style="border-radius: 30px; padding: 20px;" class="card mb-4 mb-xl-0">
-                    <div><h4 style="text-align: center;">Foto de perfil</h4></div>
-                    <div id="displayImage" class="card-body text-center">
-                        <!-- Profile picture image-->
-                        <img style="width: 45%;" id="profilePicture" class="img-account-profile rounded-circle mb-2"
-                            src="https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg" alt="">
-                        <!-- Profile picture help block-->
-                        <div class="small font-italic text-muted mb-4">JPG o PNG no más grandes de 5 MB</div>
-                        <!-- Profile picture upload button-->
-                        <input  type="file" id="formFileLg" class="custom-file-input" name="pfp">
+            <div class="row">
+                <div class="col-xl-4">
+                    <!-- Profile picture card-->
+                    <div id="pfpDiv" style="border-radius: 30px; padding: 20px;" class="card mb-4 mb-xl-0 ">
+                        <div>
+                            <h4 style="text-align: center;">Foto de perfil</h4>
+                        </div>
+                        <div id="displayImage" class="card-body text-center">
+                            <!-- Profile picture image-->
+                            <img style="width: 45%;" id="profilePicture" class="img-account-profile rounded-circle mb-2"
+                                src="https://cdn.idropnews.com/wp-content/uploads/2018/09/10214134/New-Features.gif"
+                                alt="">
+                            <!-- Profile picture help block-->
+                            <div class="small font-italic text-muted mb-4">JPG o PNG no más grandes de 5 MB</div>
+                            <!-- Profile picture upload button-->
+                            <input required type="file" id="formFileLg" class="custom-file-input form-control form-control-lg" name="pfp">
+                        </div>
                     </div>
+                    <br>
+                    <!-- form para subir proyectos -->
+                    <div id="pfpDiv" style="border-radius: 30px; padding: 20px;" class="card mb-4 mb-xl-0">
+                        <div>
+                            <h4 style="text-align: center;">Sube tu proyecto</h4>
+                            <p style="text-align: center; color: gray;">(en rar)</p>
+                        </div>
+                        <div class="card-body text-center">
+                            <!-- Profile picture image-->
+                            <img style="width: 45%;" id="profilePicture" class="img-account-profile rounded-circle mb-2"
+                                src="https://repository-images.githubusercontent.com/605295693/57e38a9d-d8f6-4596-a8c8-e4bff6ada7d7"
+                                alt="">
+                            <!-- Profile picture help block-->
+                            <div class="small font-italic text-muted mb-4">JPG o PNG no más grandes de 5 MB</div>
+                            <!-- Profile picture upload button-->
+                            <input required type="file" id="formFileLg" class="custom-file-input form-control form-control-lg" name="pfp">
+                        </div>
+                    </div>
+
+                    <script>
+                        // Obtener referencia al input de archivo
+                        const fileInput = document.getElementById('formFileLg');
+
+                        // Agregar un evento de cambio al input de archivo
+                        fileInput.addEventListener('change', function (event) {
+                            const file = event.target.files[0]; // Obtener el archivo seleccionado
+
+                            if (file) {
+                                const reader = new FileReader();
+
+                                // Definir la función a ejecutar cuando se haya leído el archivo
+                                reader.onload = function (e) {
+                                    const profilePicture = document.getElementById('profilePicture');
+                                    profilePicture.src = e.target.result; // Actualizar la imagen con el contenido del archivo
+                                };
+
+                                reader.readAsDataURL(file); // Leer el archivo como URL de datos
+                            }
+                        });
+                    </script>
+
                 </div>
+                <div class="col-xl-8">
+                    <!-- Account details card-->
+                    <div id="infoDiv" style="border-radius: 30px; padding: 50px;" class="card mb-4 ">
+                        <div>
+                            <h4 style="text-align: center;">Cuentanos un poco de ti</h4>
+                        </div>
+                        <div class="card-body">
 
-                <script>
-                    // Obtener referencia al input de archivo
-                    const fileInput = document.getElementById('formFileLg');
-
-                    // Agregar un evento de cambio al input de archivo
-                    fileInput.addEventListener('change', function (event) {
-                        const file = event.target.files[0]; // Obtener el archivo seleccionado
-
-                        if (file) {
-                            const reader = new FileReader();
-
-                            // Definir la función a ejecutar cuando se haya leído el archivo
-                            reader.onload = function (e) {
-                                const profilePicture = document.getElementById('profilePicture');
-                                profilePicture.src = e.target.result; // Actualizar la imagen con el contenido del archivo
-                            };
-
-                            reader.readAsDataURL(file); // Leer el archivo como URL de datos
-                        }
-                    });
-                </script>
-
-            </div>
-            <div class="col-xl-8">
-                <!-- Account details card-->
-                <div id="infoDiv" style="border-radius: 30px; padding: 50px;" class="card mb-4">
-                    <div><h4 style="text-align: center;">Cuentanos un poco de ti</h4></div>
-                    <div class="card-body">
-                        
                             <!-- Form Group (username)-->
                             <div class="mb-3">
                                 <label class="small mb-1" for="inputUsername">¿Cuál es tu semestre?</label>
                                 <input class="form-control" name="semestre" id="inputUsername" type="number"
-                                    placeholder="Enter your username" value="username">
+                                    placeholder="semestre" >
                             </div>
                             <!-- Form Row-->
                             <div class="row gx-3 mb-3">
@@ -71,16 +305,19 @@
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputFirstName">Materias favorita</label>
                                     <input name="mateFav" class="form-control" id="inputFirstName" type="text"
-                                        placeholder="Enter your first name" value="Valerie">
+                                        placeholder="Enter your first name" value="Taller de sistemas operativos">
                                 </div>
                                 <!-- Form Group (last name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputFirstName">Maestros favoritos</label>
                                     <select name="maestroFav" class="form-select" aria-label="Default select example">
                                         <% for(var i=0; i < resultado.length; i++) { %>
-                                            <option data-="https://lh3.googleusercontent.com/a-/ACB-R5T74uDsvnWkqrTSYLnlvtbf9uwlB481MVMtpKJA=s75-c"><%= resultado[i].nombre %></option>
-                                         <% } %>
-                                      </select>
+                                            <option
+                                                data-="https://lh3.googleusercontent.com/a-/ACB-R5T74uDsvnWkqrTSYLnlvtbf9uwlB481MVMtpKJA=s75-c">
+                                                <%= resultado[i].nombre %>
+                                            </option>
+                                            <% } %>
+                                    </select>
                                     <!-- <label class="small mb-1" for="inputLastName">Maestros favoritos</label>
                                     <input class="form-control" id="inputLastName" type="text"
                                         placeholder="Enter your last name" value="Luna"> -->
@@ -92,7 +329,7 @@
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputOrgName">Tecnologico en el que estudias</label>
                                     <input name="tecUni" class="form-control" id="inputOrgName" type="text"
-                                        placeholder="Enter your organization name" value="Start Bootstrap">
+                                        placeholder="Enter your organization name" value="Tec MM">
                                 </div>
                                 <!-- Form Group (location)-->
                                 <div class="col-md-6">
@@ -113,7 +350,7 @@
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputPhone">Numero de telefono</label>
                                     <input name="numTel" class="form-control" id="inputPhone" type="tel"
-                                        placeholder="Enter your phone number" value="555-123-4567">
+                                        placeholder="Enter your phone number" value="322-200-6239">
                                 </div>
                                 <!-- Form Group (birthday)-->
                                 <div class="col-md-6">
@@ -123,35 +360,46 @@
                                 </div>
                             </div>
                             <!-- Save changes button-->
-                            
-                            <button style="border-radius: 20px; scale: 1.2; " class="btn btn-danger" type="submit">Guardar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+                            <button style="border-radius: 20px; scale: 1.2; " class="btn btn-danger"
+                                type="submit">Guardar</button>
+        </form>
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
 </body>
 <style>
+    #profilePicture {
+        transition: scale 0.5s, transform 0.5s;
+    }
 
-    #infoDiv{
+    #profilePicture:hover {
+        scale: 1.2;
+        transform: rotate(25deg);
+    }
+
+    #infoDiv {
         transition: transform 250ms;
     }
 
-    #infoDiv:hover{
+    #infoDiv:hover {
         transform: translateY(-8px);
     }
-    
-    #pfpDiv{
+
+    #pfpDiv {
         transition: transform 250ms;
     }
-    #pfpDiv:hover{
+
+    #pfpDiv:hover {
         transform: translateY(-8px);
     }
+
     body {
         margin-top: 20px;
-      
-        
+
+
     }
 
     .img-account-profile {

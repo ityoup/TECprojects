@@ -21,6 +21,7 @@ rutas.post('/acti', pfp.single('pfp'), function (req, res, next){
   
    console.log(req.file.filename);
 
+
         let semestre = req.body.semestre;
         let materiaFav = req.body.mateFav;
         let maestroFav = req.body.maestroFav;
