@@ -5,6 +5,7 @@ import { raiz } from "../controllers/main.controller.js";
 import { subirImagen, anuario, loginAnuario } from "../controllers/anuario.controller.js";
 import { credenciales } from "../controllers/login.controller.js";
 import { getViewRegister, getViewHubAlumno } from "../controllers/registrarDatos.controller.js";
+import { register, registerCredenciales } from "../controllers/register.controller.js";
 import multer from "multer";
 const subida = multer({ dest: 'public/' })
 const pfp = multer({ dest: 'public/profilePic' })
@@ -27,25 +28,28 @@ rutas.use(session({
 function requireLogin(req, res, next) {
   if (req.session && req.session.loggedIn) {
     // El usuario ha iniciado sesión, continúa con la siguiente ruta o middleware
+    
     next();
   } else {
     // El usuario no ha iniciado sesión, redirige al formulario de inicio de sesión
     res.redirect('/login');
+    
   }
 }
 //Ruta Veterinaria
 rutas.get('/', raiz);
 
-rutas.get('/registerDatos',requireLogin ,getViewRegister)
+rutas.get('/registerDatos' , requireLogin ,getViewRegister)
 
-rutas.get('/hubAlumno',requireLogin ,getViewHubAlumno)
+rutas.get('/hubAlumno' ,getViewHubAlumno)
 
-rutas.post('/acti', requireLogin, pfp.single('pfp'), function (req, res, next){
+rutas.post('/acti', pfp.single('pfp'), function (req, res, next){
   
    console.log(req.file.filename);
 
 
         let semestre = req.body.semestre;
+        let imagen = req.file.filename;
         let materiaFav = req.body.mateFav;
         let maestroFav = req.body.maestroFav;
         let tecUni = req.body.tecUni;
@@ -55,7 +59,7 @@ rutas.post('/acti', requireLogin, pfp.single('pfp'), function (req, res, next){
         let email = req.body.email;
 
         try {
-         con.query(`INSERT INTO infoAlumnos (semestre, materiasFav, maestrosFav, tecUni, ciudad, email ,numTel, cumple) values (${semestre},'${materiaFav}', '${maestroFav}', '${tecUni}', '${ciudad}', '${email}','${numTel}', '${birthday}')`)
+         con.query(`INSERT INTO infoAlumnos (semestre, imagen, materiasFav ,maestrosFav, tecUni, ciudad, email, numTel, cumple) values (${semestre}, 'https://jclizarraga.com/profilePic/${imagen}' ,'${materiaFav}', '${maestroFav}', '${tecUni}', '${ciudad}', '${email}','${numTel}', '${birthday}')`)
         } catch (error) {
          
         }
@@ -69,6 +73,10 @@ rutas.get('/subirImagen',requireLogin ,subirImagen);
 rutas.get('/login', loginAnuario);
 
 rutas.post('/loginCredenciales', credenciales)
+
+rutas.get('/register', register )
+
+rutas.post('/registerCredenciales' , registerCredenciales)
 
 //Post para la subida de archivos junto con multer
 rutas.post('/upload', subida.single('subirArchivo'), function (req, res, next) {
