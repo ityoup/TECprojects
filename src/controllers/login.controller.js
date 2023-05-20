@@ -20,7 +20,7 @@ export const credenciales = async (req, res) => {
         console.log("hemos encontrados coincidencias con el usuario")
         if (coincidenciasPass == accesos.contraseña) {
             console.log("contraseña correcta");
-            res.redirect('/subirImagen');
+            res.redirect('/registerDatos');
 
         } else if (coincidenciasPass == "no_Encontrado") {
             console.log("contraseña incorrecta");
