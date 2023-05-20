@@ -301,7 +301,7 @@
                             <div class="mb-3">
                                 <label class="small mb-1" for="inputUsername">¿Cuál es tu semestre?</label>
                                 <input class="form-control" name="semestre" id="inputUsername" type="number"
-                                    placeholder="semestre">
+                                    placeholder="<%= semestre %>">
                             </div>
                             <!-- Form Row-->
                             <div class="row gx-3 mb-3">
@@ -338,8 +338,9 @@
                                 </div>
                                 <!-- Form Group (last name)-->
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="inputFirstName">Maestros favoritos</label>
-                                    <select name="maestroFav" class="form-select" aria-label="Default select example">
+                                    <label class="small mb-1" for="inputFirstName">Maestros favoritos</label> <br>
+                                    <select name="maestroFav" class="selectpicker" multiple data-live-search="true" aria-label="Default select example">
+                                        <option selected disabled>Seleccionar maestros</option>
                                         <% for(var i=0; i < resultado.length; i++) { %>
                                             <option
                                                 data-="https://lh3.googleusercontent.com/a-/ACB-R5T74uDsvnWkqrTSYLnlvtbf9uwlB481MVMtpKJA=s75-c">
@@ -358,20 +359,20 @@
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputOrgName">Tecnologico en el que estudias</label>
                                     <input name="tecUni" class="form-control" id="inputOrgName" type="text"
-                                        placeholder="Enter your organization name" value="Tec MM">
+                                        placeholder="Enter your organization name" value="<%= tecUni %>">
                                 </div>
                                 <!-- Form Group (location)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputLocation">Ciudad</label>
                                     <input name="ciudad" class="form-control" id="inputLocation" type="text"
-                                        placeholder="Enter your location" value="San Francisco, CA">
+                                        placeholder="Enter your location" value="<%= ciudad %>">
                                 </div>
                             </div>
                             <!-- Form Group (email address)-->
                             <div class="mb-3">
                                 <label class="small mb-1" for="inputEmailAddress">Correo electronico</label>
                                 <input class="form-control" id="inputEmailAddress" type="email"
-                                    placeholder="Enter your email address" value="name@example.com">
+                                    placeholder="Enter your email address" name="email" value="<%= email %>">
                             </div>
                             <!-- Form Row-->
                             <div class="row gx-3 mb-3">
@@ -379,13 +380,13 @@
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputPhone">Numero de telefono</label>
                                     <input name="numTel" class="form-control" id="inputPhone" type="tel"
-                                        placeholder="Enter your phone number" value="322-200-6239">
+                                        placeholder="Enter your phone number" value="<%= numTel %>">
                                 </div>
                                 <!-- Form Group (birthday)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputBirthday">Fecha de cumpleaños</label>
                                     <input class="form-control" id="inputBirthday" type="text" name="birthday"
-                                        placeholder="Enter your birthday" value="02/05/2023">
+                                        placeholder="Enter your birthday" value="<%= cumple %>">
                                 </div>
                             </div>
                             <!-- Save changes button-->

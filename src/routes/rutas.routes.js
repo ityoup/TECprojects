@@ -29,6 +29,13 @@ rutas.post('/acti', pfp.single('pfp'), function (req, res, next){
         let ciudad = req.body.ciudad;
         let numTel = req.body.numTel;
         let birthday = req.body.birthday;
+        let email = req.body.email;
+
+        try {
+         con.query(`INSERT INTO infoAlumnos (semestre, materiasFav, maestrosFav, tecUni, ciudad, email ,numTel, cumple) values (${semestre},'${materiaFav}', '${maestroFav}', '${tecUni}', '${ciudad}', '${email}','${numTel}', '${birthday}')`)
+        } catch (error) {
+         
+        }
 
         console.log(req.body);
 })
