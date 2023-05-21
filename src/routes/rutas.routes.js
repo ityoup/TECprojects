@@ -43,7 +43,7 @@ rutas.get('/registerDatos' , requireLogin ,getViewRegister)
 
 rutas.get('/hubAlumno' ,getViewHubAlumno)
 
-rutas.post('/acti', pfp.single('pfp'), function (req, res, next){
+rutas.post('/acti', pfp.single('pfp'), async function (req, res, next){
   
    console.log(req.file.filename);
 
@@ -60,6 +60,7 @@ rutas.post('/acti', pfp.single('pfp'), function (req, res, next){
 
         console.log(req.body)
         try {
+          
          con.query(`UPDATE infoAlumnos set semestre='${semestre}', imagen = '${imagen}', materiasFav='${materiaFav}' ,maestrosFav = '${maestroFav}', tecUni = '${tecUni}', ciudad = '${ciudad}', email = '${email}', numTel = ${numTel}, cumple = '${birthday}' where idUser = '${idUser}'`)
          setTimeout(() => {
             res.redirect('/hubAlumnos')
