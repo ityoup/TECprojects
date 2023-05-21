@@ -47,7 +47,7 @@ rutas.post('/acti', pfp.single('pfp'), function (req, res, next){
   
    console.log(req.file.filename);
 
-
+        let idUser = req.body.idUser;
         let semestre = req.body.semestre;
         let imagen = req.file.filename;
         let materiaFav = req.body.mateFav;
@@ -58,8 +58,9 @@ rutas.post('/acti', pfp.single('pfp'), function (req, res, next){
         let birthday = req.body.birthday;
         let email = req.body.email;
 
+        console.log(req.body)
         try {
-         con.query(`INSERT INTO infoAlumnos (semestre, imagen, materiasFav ,maestrosFav, tecUni, ciudad, email, numTel, cumple) values (${semestre}, 'https://jclizarraga.com/profilePic/${imagen}' ,'${materiaFav}', '${maestroFav}', '${tecUni}', '${ciudad}', '${email}','${numTel}', '${birthday}')`)
+         con.query(`UPDATE infoAlumnos set semestre='${semestre}', imagen = '${imagen}', materiasFav='${materiaFav}' ,maestrosFav = '${maestroFav}', tecUni = '${tecUni}', ciudad = '${ciudad}', email = '${email}', numTel = ${numTel}, cumple = '${birthday}' where idUser = '${idUser}'`)
         } catch (error) {
          
         }

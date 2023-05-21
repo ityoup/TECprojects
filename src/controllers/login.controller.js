@@ -29,7 +29,7 @@ export const credenciales = async (req, res) => {
 
             try {
 
-
+                let idUser = existeUser[0].idUser;
                 let semestre = existeUser[0].semestre;
                 let materiasFav = existeUser[0].materiasFav;
                 let maestrosFav = existeUser[0].maestrosFav;
@@ -50,7 +50,7 @@ export const credenciales = async (req, res) => {
 
 
 
-                res.render("registerDatos/registerDatos", { resultado, fotos, semestre, pfp, materiasFav, maestrosFav, tecUni, ciudad, email, numTel, cumple })
+                res.render("registerDatos/registerDatos", { idUser, resultado, fotos, semestre, pfp, materiasFav, maestrosFav, tecUni, ciudad, email, numTel, cumple })
             } catch (error) {
 
                 let resultado = "dsf";
@@ -67,6 +67,7 @@ export const credenciales = async (req, res) => {
 
                 console.log("no existe nada");
                 res.render("registerDatos/registerDatos", { resultado, fotos, semestre, pfp, materiasFav, tecUni, ciudad, email, numTel, cumple });
+               
             }
 
 
