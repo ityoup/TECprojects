@@ -15,7 +15,7 @@ export const getViewRegister =  async (req ,res)=>{
 }
 
 export const getViewHubAlumno = async (req ,res)=>{
-    console.log(`aqui el query`+req.query);
+    console.log(`aqui el query`+req.query.tecUni);
     let [resultado] = await con.query('select * from maestrosFotos where id=1');
     let maestro = resultado[0].imagen
     console.log(resultado)
