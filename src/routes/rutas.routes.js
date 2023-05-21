@@ -63,7 +63,9 @@ rutas.post('/acti', pfp.single('pfp'), async function (req, res, next){
           
          con.query(`UPDATE infoAlumnos set semestre='${semestre}', imagen = '${imagen}', materiasFav='${materiaFav}' ,maestrosFav = '${maestroFav}', tecUni = '${tecUni}', ciudad = '${ciudad}', email = '${email}', numTel = ${numTel}, cumple = '${birthday}' where idUser = '${idUser}'`)
          setTimeout(() => {
-            res.redirect('/registerDatos')
+            res.send(`<script>
+            location.reload();
+          </script>`)
          }, 1000);
         } catch (error) {
          
