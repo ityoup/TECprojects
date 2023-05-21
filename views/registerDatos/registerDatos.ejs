@@ -343,16 +343,16 @@
                                 <!-- Form Group (last name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputFirstName">Maestros favoritos</label> <br>
-                                    <select name="maestroFav" class="selectpicker" multiple data-live-search="true"
-                                        aria-label="Default select example">
+                                    <select name="maestroFav" class="selectpicker" multiple data-live-search="true" aria-label="Default select example">
                                         <option selected disabled>Seleccionar maestros</option>
                                         <% for(var i=0; i < resultado.length; i++) { %>
-                                            <option
-                                                data-="https://lh3.googleusercontent.com/a-/ACB-R5T74uDsvnWkqrTSYLnlvtbf9uwlB481MVMtpKJA=s75-c">
+                                            <option data-img="https://lh3.googleusercontent.com/a-/ACB-R5T74uDsvnWkqrTSYLnlvtbf9uwlB481MVMtpKJA=s75-c"
+                                                <% if (maestrosFav.includes(resultado[i].nombre)) { %>selected<% } %>>
                                                 <%= resultado[i].nombre %>
                                             </option>
-                                            <% } %>
+                                        <% } %>
                                     </select>
+                                    
                                     <!-- <label class="small mb-1" for="inputLastName">Maestros favoritos</label>
                                     <input class="form-control" id="inputLastName" type="text"
                                         placeholder="Enter your last name" value="Luna"> -->
