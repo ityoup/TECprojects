@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <!DOCTYPE html>
 
-<html lang="en">
+    <html lang="en">
 
-<head>
+    <head>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Section</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team Section</title>
 
-    <!--Custom CSS-->
-    <link rel="stylesheet" href="/home/nartikn/Uni/TECprojects/public/tailwind.css">
+        <!--Custom CSS-->
+        <link rel="stylesheet" href="/home/nartikn/Uni/TECprojects/public/tailwind.css">
 
-    <!--Tailwind CSS-->
-    <script src="https://cdn.tailwindcss.com"></script>
+        <!--Tailwind CSS-->
+        <script src="https://cdn.tailwindcss.com"></script>
 
-    <style type="text/tailwindcss">
-        @layer components {
+        <style type="text/tailwindcss">
+            @layer components {
 
           .card {
             @apply flex items-center justify-center flex-col gap-2 p-5 w-full sm:w-72 h-full bg-gray-100 border rounded-2xl
@@ -33,81 +35,98 @@
 
         }
     </style>
-    <!--Tailwind CSS-->
+        <!--Tailwind CSS-->
 
-    <!--Font-Awesome-->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    />
+        <!--Font-Awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+            integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-    <div class="container mx-auto py-8">
+        <div class="container mx-auto py-8">
 
-        <div class="flex flex-col text-center gap-4 mb-8 p-4">
+            <div class="flex flex-col text-center gap-4 mb-8 p-4">
 
-            <div class="text-purple-600 text-sm font-bold">Our team</div>
+                <div class="text-purple-600 text-sm font-bold">Our team</div>
 
-            <div class="text-gray-900 text-3xl md:text-4xl font-bold">Some of the people you'll be working with</div>
+                <div class="text-gray-900 text-3xl md:text-4xl font-bold">Some of the people you'll be working with
+                </div>
 
-            <div class="text-gray-600 md:text-lg">We're a 100% remote team spread all across the world. Join us!</div>
-
-        </div>
-
-        <div class="flex items-center justify-center flex-wrap gap-4 p-4">
-            <% user.forEach((info) =>{ %>
-            <div class="card">
-
-                <img src="https://jclizarraga.com/profilePic/<%= info.imagen %>">
-
-                <div class="text-gray-900 text-lg font-bold"><%= info.user %></div>
-
-                <div class="text-purple-600"><%= info.materiasFav %></div>
-                <div class="text-gray-600 text-xs">Semestre: <%= info.semestre %></div>
-                <div class="text-gray-600 text-xs">Maestros favs: <%= info.maestrosFav %></div>
-                
-                <div class="text-gray-600"><%= info.ciudad %></div>
-                <div class="text-gray-600 text-xs">Contactame en: </div>
-                <div class="text-gray-600"><%= info.numTel %></div>
-                <div class="text-gray-600 text-xs">ó</div>
-                <div class="text-gray-600"><%= info.cumple %></div>
-
-                <div class="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600">
-                    <i class="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-gray-400"></i>
-                    <i class="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-gray-400"></i>
-                    <i class="fa-brands fa-dribbble fa-lg cursor-pointer transition duration-200 hover:text-gray-400"></i>
+                <div class="text-gray-600 md:text-lg">We're a 100% remote team spread all across the world. Join us!
                 </div>
 
             </div>
-            <% }) %>
 
-            
+            <div class="flex items-center justify-center flex-wrap gap-4 p-4">
+                <% user.forEach((info)=>{ %>
+                    <div style="height: 30em;" class="card">
+                        <div style="width: 40%;">
+                            <img src="https://jclizarraga.com/profilePic/<%= info.imagen %>">
+                        </div>
+                        <div class="text-gray-900 text-lg font-bold">
+                            <%= info.user %>
+                        </div>
+
+                        <div class="text-purple-600">
+                            <%= info.materiasFav %>
+                        </div>
+                        <div class="text-gray-600 text-xs">Semestre: <%= info.semestre %>
+                        </div>
+                        <div class="text-gray-600 text-xs">Maestros favs: <%= info.maestrosFav %>
+                        </div>
+
+                        <div class="text-gray-600">
+                            <%= info.ciudad %>
+                        </div>
+                        <div class="text-gray-600 text-xs">Contactame en: </div>
+                        <div class="text-gray-600">
+                            <%= info.numTel %>
+                        </div>
+                        <div class="text-gray-600 text-xs">ó</div>
+                        <div class="text-gray-600">
+                            <%= info.cumple %>
+                        </div>
+
+                        <div class="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600">
+                            <i
+                                class="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-gray-400"></i>
+                            <i
+                                class="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-gray-400"></i>
+                            <i
+                                class="fa-brands fa-dribbble fa-lg cursor-pointer transition duration-200 hover:text-gray-400"></i>
+                        </div>
+
+                    </div>
+                    <% }) %>
+
+
+
+            </div>
 
         </div>
 
-    </div>
+    </body>
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+
+    </html>
 </body>
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #ffffff;
-    font-family: 'Poppins', sans-serif;
-}
-</style>
-</html>
-</body>
 </html>
