@@ -63,7 +63,7 @@ rutas.post('/acti', pfp.single('pfp'), async function (req, res, next){
           
          con.query(`UPDATE infoAlumnos set semestre='${semestre}', imagen = '${imagen}', materiasFav='${materiaFav}' ,maestrosFav = '${maestroFav}', tecUni = '${tecUni}', ciudad = '${ciudad}', email = '${email}', numTel = ${numTel}, cumple = '${birthday}' where idUser = '${idUser}'`)
          setTimeout(() => {
-            res.redirect(`/hubAlumno?semestre=${semestre}`)
+            res.redirect(`/hubAlumno?semestre=${semestre}&imagen=${imagen}&materiasFav=${materiaFav}&maestrosFav=${maestroFav}&tecUni=${tecUni}&ciudad=${ciudad}&email=${email}&numTel=${numTel}&cumple=${birthday}`)
          }, 1000);
         } catch (error) {
          
