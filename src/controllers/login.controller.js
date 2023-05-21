@@ -51,7 +51,7 @@ export const credenciales = async (req, res) => {
                 if(pfp == null){
                     pfp = "https://cdn.idropnews.com/wp-content/uploads/2018/09/10214134/New-Features.gif"
                 }else{
-                    pfp = existeUser[0].imagen;
+                    pfp = `https://jclizarraga.com/profilePic/${existeUser[0].imagen}`;
                 }
 
 
