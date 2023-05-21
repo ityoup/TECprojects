@@ -28,73 +28,79 @@ rutas.use(session({
 function requireLogin(req, res, next) {
   if (req.session && req.session.loggedIn) {
     // El usuario ha iniciado sesión, continúa con la siguiente ruta o middleware
-    
+
     next();
   } else {
     // El usuario no ha iniciado sesión, redirige al formulario de inicio de sesión
     res.redirect('/login');
-    
+
   }
 }
 //Ruta Veterinaria
 rutas.get('/', raiz);
 
-rutas.get('/registerDatos' , requireLogin ,getViewRegister)
+rutas.get('/registerDatos', requireLogin, getViewRegister)
 
-rutas.get('/hubAlumno' ,getViewHubAlumno)
+rutas.get('/hubAlumno', getViewHubAlumno)
 
-rutas.post('/acti', pfp.single('pfp'), async function (req, res, next){
-  
-   console.log(req.file.filename);
+rutas.post('/acti', pfp.single('pfp'), async function (req, res, next) {
 
-        let idUser = req.body.idUser;
-        let semestre = req.body.semestre;
-        let imagen = req.file.filename;
-        let materiaFav = req.body.mateFav;
-        let maestroFav = req.body.maestroFav;
-        let tecUni = req.body.tecUni;
-        let ciudad = req.body.ciudad;
-        let numTel = req.body.numTel;
-        let birthday = req.body.birthday;
-        let email = req.body.email;
+  console.log(req.file.filename);
 
-        console.log(req.body)
-        try {
-          
-         con.query(`UPDATE infoAlumnos set semestre='${semestre}', imagen = '${imagen}', materiasFav='${materiaFav}' ,maestrosFav = '${maestroFav}', tecUni = '${tecUni}', ciudad = '${ciudad}', email = '${email}', numTel = ${numTel}, cumple = '${birthday}' where idUser = '${idUser}'`)
-         setTimeout(() => {
-          location.reload();
-         }, 1000);
-        } catch (error) {
-         
-        }
+  let idUser = req.body.idUser;
+  let semestre = req.body.semestre;
+  let imagen = req.file.filename;
+  let materiaFav = req.body.mateFav;
+  let maestroFav = req.body.maestroFav;
+  let tecUni = req.body.tecUni;
+  let ciudad = req.body.ciudad;
+  let numTel = req.body.numTel;
+  let birthday = req.body.birthday;
+  let email = req.body.email;
 
-        console.log(req.body);
+  console.log(req.body)
+  try {
+
+    con.query(`UPDATE infoAlumnos set semestre='${semestre}', imagen = '${imagen}', materiasFav='${materiaFav}' ,maestrosFav = '${maestroFav}', tecUni = '${tecUni}', ciudad = '${ciudad}', email = '${email}', numTel = ${numTel}, cumple = '${birthday}' where idUser = '${idUser}'`)
+    setTimeout(() => {
+      // Después de realizar la actualización y enviar la respuesta al cliente
+      res.send(`
+<script>
+  window.location.reload();
+</script>
+`);
+
+    }, 1000);
+  } catch (error) {
+
+  }
+
+  console.log(req.body);
 })
 
 //Ruta para subir imagenes al anuario
-rutas.get('/subirImagen',requireLogin ,subirImagen);
+rutas.get('/subirImagen', requireLogin, subirImagen);
 
 rutas.get('/login', loginAnuario);
 
 rutas.post('/loginCredenciales', credenciales)
 
-rutas.get('/register', register )
+rutas.get('/register', register)
 
-rutas.post('/registerCredenciales' , registerCredenciales)
+rutas.post('/registerCredenciales', registerCredenciales)
 
 //Post para la subida de archivos junto con multer
 rutas.post('/upload', subida.single('subirArchivo'), function (req, res, next) {
 
-   res.redirect('/subirImagen')
-   const numFile = req.file.filename;
-   console.log(numFile)
+  res.redirect('/subirImagen')
+  const numFile = req.file.filename;
+  console.log(numFile)
 
-   try {
-      con.query(`INSERT INTO imagenes (imagenes) values ('${numFile}')`)
-   } catch (error) {
-      console.log('no se pudo insertar el valor');
-   }
+  try {
+    con.query(`INSERT INTO imagenes (imagenes) values ('${numFile}')`)
+  } catch (error) {
+    console.log('no se pudo insertar el valor');
+  }
 })
 
 rutas.get('/anuario', anuario)
