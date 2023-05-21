@@ -4,16 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+        
+        .container {
+            position: relative;
+            width: 400px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+        
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
+            color: #333333;
+            font-size: 20px;
+        }
+        
+        .input {
+            width: 70%; /* Se reduce el ancho al 70% */
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            color: #333333;
+            font-size: 14px;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+        
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        
+        .image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <form action="/registerCredenciales" method="post">
-        <h2 class="title">Bienvenido</h2>
-                    <h5>Usuario</h5>
-                    <input type="text" class="input" name="user">
-                    <h5>Contraseña</h5>
-                    <input type="password" class="input" name="password">
-              <input type="submit" value="Aceptar" class="btn btn-primary">
-            </form>
+    <div class="container">
+        <img class="image" src="https://www.onemorething.nl/wp-content/uploads/2019/02/iOS-12.2-animoji-babyhaai.gif" alt="Shark">
+        <form action="/registerCredenciales" method="post">
+            <h2 class="title">Bienvenido</h2>
+            <h5 class="title" style="font-size: 14px;">Usuario</h5>
+            <input type="text" class="input" name="user">
+            <h5 class="title" style="font-size: 14px;">Contraseña</h5>
+            <input type="password" class="input" name="password">
+            <input type="submit" value="Aceptar" class="btn">
+        </form>
+    </div>
 </body>
 </html>
