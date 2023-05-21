@@ -64,13 +64,13 @@
                 <% user.forEach((info)=>{ %>
                     <div style="height: 30em;" class="card">
                         <div style="width: 40%;">
-                            <img src="https://jclizarraga.com/profilePic/<%= info.imagen %>">
+                            <img style="border: solid;height: 100px; width: 100px " src="https://jclizarraga.com/profilePic/<%= info.imagen %>">
                         </div>
                         <div class="text-gray-900 text-lg font-bold">
                             <%= info.user %>
                         </div>
 
-                        <div class="text-purple-600">
+                        <div class="text-purple-600 text-xs">
                             <%= info.materiasFav %>
                         </div>
                         <div class="text-gray-600 text-xs">Semestre: <%= info.semestre %>
@@ -82,22 +82,15 @@
                             <%= info.ciudad %>
                         </div>
                         <div class="text-gray-600 text-xs">Contactame en: </div>
-                        <div class="text-gray-600">
+                        <div class="text-gray-600 text-xs">
                             <%= info.numTel %>
                         </div>
                         <div class="text-gray-600 text-xs">ó</div>
-                        <div class="text-gray-600">
+                        <div class="text-gray-600 text-xs">
                             <%= info.cumple %>
                         </div>
 
-                        <div class="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600">
-                            <i
-                                class="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-gray-400"></i>
-                            <i
-                                class="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-gray-400"></i>
-                            <i
-                                class="fa-brands fa-dribbble fa-lg cursor-pointer transition duration-200 hover:text-gray-400"></i>
-                        </div>
+                        
 
                     </div>
                     <% }) %>
