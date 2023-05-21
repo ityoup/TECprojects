@@ -396,17 +396,20 @@
                                 </div>
                             </div>
                             <!-- Save changes button-->
-                            <div id="successMessage" style="display: none;">Guardado con éxito</div>
+                            <div id="successAlert" class="alert alert-success" style="display: none;">
+                                Guardado con éxito
+                            </div>
                             <button style="border-radius: 20px; scale: 1.2; " class="btn btn-danger" type="submit"
                                 onclick="guardar()">Guardar</button>
                             <script>
                                 function guardar() {
                                     // Código para realizar la operación de guardado, como enviar una solicitud al servidor
 
-                                    // Mostrar el mensaje de éxito
-                                    const successMessage = document.getElementById('successMessage');
-                                    successMessage.style.display = 'block';
+                                    // Mostrar la alerta de éxito
+                                    const successAlert = document.getElementById('successAlert');
+                                    successAlert.style.display = 'block';
                                 }
+
                             </script>
         </form>
     </div>
