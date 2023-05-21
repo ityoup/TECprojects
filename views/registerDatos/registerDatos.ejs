@@ -312,18 +312,30 @@
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputFirstName">Materias favorita</label><br>
                                     <select name="mateFav" class="selectpicker" multiple data-live-search="true">
-                                        <option value="Taller de sistemas operativos">Taller de sistemas operativos</option>
-                                        <option value="Redes">Redes</option>
-                                        <option value="Programacion Web">Programacion Web</option>
-                                        <option value="Aplicaciones moviles" >Aplicaciones moviles</option>
-                                        <option value="Programacion logica y funcional" >Programacion logica y funcional</option>
-                                        <option value="Taller de investigacion" >Taller de investigacion</option>
-                                        <option value="Algebra" >Algebra</option>
-                                        <option value="Estructura de datos">Estructura de datos</option>
-                                        <option value="Fisica" >Fisica</option>
+                                        <option value="Taller de sistemas operativos" <% if
+                                            (maestrosFav.includes("Taller de sistemas operativos")) { %>selected<% } %>
+                                                >Taller de sistemas operativos</option>
+                                        <option value="Redes" <% if (maestrosFav.includes("Redes")) { %>selected<% } %>
+                                                >Redes</option>
+                                        <option value="Programacion Web" <% if (maestrosFav.includes("Programacion
+                                            Web")) { %>selected<% } %>>Programacion Web</option>
+                                        <option value="Aplicaciones moviles" <% if (maestrosFav.includes("Aplicaciones
+                                            moviles")) { %>selected<% } %>>Aplicaciones moviles</option>
+                                        <option value="Programacion logica y funcional" <% if
+                                            (maestrosFav.includes("Programacion logica y funcional")) { %>selected<% }
+                                                %>>Programacion logica y funcional</option>
+                                        <option value="Taller de investigacion" <% if (maestrosFav.includes("Taller de
+                                            investigacion")) { %>selected<% } %>>Taller de investigacion</option>
+                                        <option value="Algebra" <% if (maestrosFav.includes("Algebra")) { %>selected<% }
+                                                %>>Algebra</option>
+                                        <option value="Estructura de datos" <% if (maestrosFav.includes("Estructura de
+                                            datos")) { %>selected<% } %>>Estructura de datos</option>
+                                        <option value="Fisica" <% if (maestrosFav.includes("Fisica")) { %>selected<% }
+                                                %>>Fisica</option>
                                     </select>
-                                    
-                                    
+
+
+
 
 
                                     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -343,20 +355,22 @@
                                 <!-- Form Group (last name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputFirstName">Maestros favoritos</label> <br>
-                                    <select name="maestroFav" class="selectpicker" multiple data-live-search="true" aria-label="Default select example">
+                                    <select name="maestroFav" class="selectpicker" multiple data-live-search="true"
+                                        aria-label="Default select example">
                                         <% for(var i=0; i < resultado.length; i++) { %>
-                                            <option data-img="https://lh3.googleusercontent.com/a-/ACB-R5T74uDsvnWkqrTSYLnlvtbf9uwlB481MVMtpKJA=s75-c"
-                                                <% if (resultado[i].nombre === maestrosFav) { %>
-                                                    selected
+                                            <option
+                                                data-img="https://lh3.googleusercontent.com/a-/ACB-R5T74uDsvnWkqrTSYLnlvtbf9uwlB481MVMtpKJA=s75-c"
+                                                <% if (resultado[i].nombre===maestrosFav) { %>
+                                                selected
                                                 <% } %>
-                                            >
-                                                <%= resultado[i].nombre %>
+                                                    >
+                                                    <%= resultado[i].nombre %>
                                             </option>
-                                        <% } %>
+                                            <% } %>
                                     </select>
-                                    
-                                    
-                                    
+
+
+
                                     <!-- <label class="small mb-1" for="inputLastName">Maestros favoritos</label>
                                     <input class="form-control" id="inputLastName" type="text"
                                         placeholder="Enter your last name" value="Luna"> -->
