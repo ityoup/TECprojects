@@ -64,18 +64,18 @@
                 <% user.forEach((info)=>{ %>
                     <div style="height: 30em;" class="card">
                         <div style="width: 40%;">
-                            <img style="border: solid;height: 100px; width: 100px " src="https://jclizarraga.com/profilePic/<%= info.imagen %>">
+                            <img style="border-radius: 40px; height: 100px; width: 100px " src="https://jclizarraga.com/profilePic/<%= info.imagen %>">
                         </div>
                         <div class="text-gray-900 text-lg font-bold">
                             <%= info.user %>
                         </div>
 
-                        <div class="text-purple-600 text-xs">
+                        <div class="text-purple-600 text-xs text-center">
                             <%= info.materiasFav %>
                         </div>
                         <div class="text-gray-600 text-xs">Semestre: <%= info.semestre %>
                         </div>
-                        <div class="text-gray-600 text-xs">Maestros favs: <%= info.maestrosFav %>
+                        <div class="text-gray-600 text-xs text-center">Maestros favs: <%= info.maestrosFav %>
                         </div>
 
                         <div class="text-gray-600">
