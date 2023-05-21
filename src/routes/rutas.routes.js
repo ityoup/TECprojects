@@ -62,7 +62,7 @@ rutas.post('/acti', pfp.single('pfp'), function (req, res, next){
         try {
          con.query(`UPDATE infoAlumnos set semestre='${semestre}', imagen = '${imagen}', materiasFav='${materiaFav}' ,maestrosFav = '${maestroFav}', tecUni = '${tecUni}', ciudad = '${ciudad}', email = '${email}', numTel = ${numTel}, cumple = '${birthday}' where idUser = '${idUser}'`)
          setTimeout(() => {
-            res.redirect('/loginCredenciales')
+            res.redirect('/registerDatos')
          }, 1000);
         } catch (error) {
          
