@@ -21,7 +21,7 @@
                 <ul class="menu">
                     <li><a href="#">INICIO</a></li>
                     <li><a href="#">EXPLORAR</a></li>
-                    
+
                     <li><a class="active" href="#">AJUSTES</a></li>
                     <li><a href="https://jclizarraga.com/login">SALIR</a></li>
                 </ul>
@@ -233,15 +233,15 @@
                     <div id="pfpDiv" style="border-radius: 30px; padding: 20px;" class="card mb-4 mb-xl-0 ">
                         <div>
                             <h4 style="text-align: center;">Foto de perfil</h4>
-                           
+
                         </div>
-                        <h8 style="text-align: center;">tu ID de User es: #<%= idUser %></h8>
+                        <h8 style="text-align: center;">tu ID de User es: #<%= idUser %>
+                        </h8>
                         <input name="idUser" value="<%= idUser %>" type="hidden">
                         <div id="displayImage" class="card-body text-center">
                             <!-- Profile picture image-->
                             <img style="width: 45%;" id="profilePicture" class="img-account-profile rounded-circle mb-2"
-                                src="<%= pfp %>"
-                                alt="">
+                                src="<%= pfp %>" alt="">
                             <!-- Profile picture help block-->
                             <div class="small font-italic text-muted mb-4">JPG o PNG no más grandes de 5 MB</div>
                             <!-- Profile picture upload button-->
@@ -264,8 +264,8 @@
                             <!-- Profile picture help block-->
                             <div class="small font-italic text-muted mb-4">JPG o PNG no más grandes de 5 MB</div>
                             <!-- Profile picture upload button-->
-                            <input type="file" id="formFileLg"
-                                class="custom-file-input form-control form-control-lg" name="pfp">
+                            <input type="file" id="formFileLg" class="custom-file-input form-control form-control-lg"
+                                name="pfp">
                         </div>
                     </div>
 
@@ -313,11 +313,13 @@
                                     <label class="small mb-1" for="inputFirstName">Materias favorita</label><br>
                                     <select name="mateFav" class="selectpicker" multiple data-live-search="true">
                                         <option selected disabled>Seleccionar materias</option>
-                                        <option value="Taller de sistemas operativos">Taller de sistemas operativos</option>
+                                        <option value="Taller de sistemas operativos">Taller de sistemas operativos
+                                        </option>
                                         <option value="Redes">Redes</option>
                                         <option value="Programacion Web">Programacion Web</option>
                                         <option value="Aplicaciones moviles">Aplicaciones moviles</option>
-                                        <option value="Programacion logica y funcional">Programacion logica y funcional</option>
+                                        <option value="Programacion logica y funcional">Programacion logica y funcional
+                                        </option>
                                         <option value="Taller de investigacion">Taller de investigacion</option>
                                         <option value="Algebra">Algebra</option>
                                         <option value="Estructura de datos">Estructura de datos</option>
@@ -342,7 +344,8 @@
                                 <!-- Form Group (last name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputFirstName">Maestros favoritos</label> <br>
-                                    <select name="maestroFav" class="selectpicker" multiple data-live-search="true" aria-label="Default select example">
+                                    <select name="maestroFav" class="selectpicker" multiple data-live-search="true"
+                                        aria-label="Default select example">
                                         <option selected disabled>Seleccionar maestros</option>
                                         <% for(var i=0; i < resultado.length; i++) { %>
                                             <option
@@ -393,9 +396,18 @@
                                 </div>
                             </div>
                             <!-- Save changes button-->
+                            <div id="successMessage" style="display: none;">Guardado con éxito</div>
+                            <button style="border-radius: 20px; scale: 1.2; " class="btn btn-danger" type="submit"
+                                onclick="guardar()">Guardar</button>
+                            <script>
+                                function guardar() {
+                                    // Código para realizar la operación de guardado, como enviar una solicitud al servidor
 
-                            <button style="border-radius: 20px; scale: 1.2; " class="btn btn-danger"
-                                type="submit">Guardar</button>
+                                    // Mostrar el mensaje de éxito
+                                    const successMessage = document.getElementById('successMessage');
+                                    successMessage.style.display = 'block';
+                                }
+                            </script>
         </form>
     </div>
     </div>
