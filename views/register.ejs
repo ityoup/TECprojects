@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +24,9 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .title {
@@ -33,31 +38,29 @@
         }
         
         .input {
-            width: 70%; /* Se reduce el ancho al 70% */
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #cccccc;
-            border-radius: 5px;
-            font-family: Arial, sans-serif;
-            color: #333333;
-            font-size: 14px;
+            
         }
         
-        .btn {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
-        }
-        
-        .btn:hover {
-            background-color: #0056b3;
-        }
+        .btn{
+  display: block;
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right, #5c0000, #777777, #5c0000);
+  background-size: 200%;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: .5s;
+}
+.btn:hover{
+  background-position: right;
+}
         
         .image {
             display: block;
@@ -68,13 +71,14 @@
 </head>
 <body>
     <div class="container">
-        <img class="image" src="https://www.onemorething.nl/wp-content/uploads/2019/02/iOS-12.2-animoji-babyhaai.gif" alt="Shark">
-        <form action="/registerCredenciales" method="post">
+        <img class="image" src="https://em-content.zobj.net/thumbs/160/apple/81/shark_1f988.png" alt="Shark">
+        <form style="display: grid; justify-content: center;" action="/registerCredenciales" method="post">
             <h2 class="title">Bienvenido</h2>
-            <h5 class="title" style="font-size: 14px;">Usuario</h5>
-            <input type="text" class="input" name="user">
-            <h5 class="title" style="font-size: 14px;">Contraseña</h5>
-            <input type="password" class="input" name="password">
+            <h5 class="title" style="font-size: 14px; font-family: 'Poppins', sans-serif;">Usuario</h5>
+            <input type="text" class="form-control" name="user">
+            <br>
+            <h5 class="title" style="font-size: 14px; font-family: 'Poppins', sans-serif;">Contraseña</h5>
+            <input type="password" class="form-control" name="password">
             <input type="submit" value="Aceptar" class="btn">
         </form>
     </div>
