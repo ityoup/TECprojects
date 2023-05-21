@@ -38,7 +38,7 @@ export const credenciales = async (req, res) => {
                 let email = existeUser[0].email;
                 let numTel = existeUser[0].numTel;
                 let cumple = existeUser[0].cumple;
-                let pfp = "https://cdn.idropnews.com/wp-content/uploads/2018/09/10214134/New-Features.gif";
+                let pfp = existeUser[0].imagen;
                 console.log(existeUser);
 
                 let [resultado] = await con.query('select nombre from maestrosFotos');
