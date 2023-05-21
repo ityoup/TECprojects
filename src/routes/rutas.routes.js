@@ -6,6 +6,7 @@ import { subirImagen, anuario, loginAnuario } from "../controllers/anuario.contr
 import { credenciales } from "../controllers/login.controller.js";
 import { getViewRegister, getViewHubAlumno } from "../controllers/registrarDatos.controller.js";
 import { register, registerCredenciales } from "../controllers/register.controller.js";
+import { explorar } from "../controllers/explorar.controller.js";
 import multer from "multer";
 const subida = multer({ dest: 'public/' })
 const pfp = multer({ dest: 'public/profilePic' })
@@ -38,6 +39,8 @@ function requireLogin(req, res, next) {
 }
 //Ruta Veterinaria
 rutas.get('/', raiz);
+
+rutas.get('/explorar', explorar )
 
 rutas.get('/registerDatos' , requireLogin ,getViewRegister)
 
