@@ -48,6 +48,12 @@ export const credenciales = async (req, res) => {
 
                 console.log(resultado[0].nombre);
 
+                if(pfp == null){
+                    pfp = "https://cdn.idropnews.com/wp-content/uploads/2018/09/10214134/New-Features.gif"
+                }else{
+                    pfp = existeUser[0].imagen;
+                }
+
 
 
                 res.render("registerDatos/registerDatos", { idUser, resultado, fotos, semestre, pfp, materiasFav, maestrosFav, tecUni, ciudad, email, numTel, cumple })
