@@ -29,7 +29,7 @@ export const getViewHubAlumno = async (req ,res)=>{
     let [resultado] = await con.query('select * from maestrosFotos where id=1');
     let maestro = resultado[0].imagen
     console.log(resultado)
-    res.render("registerDatos/hubAlumno", {maestro, imagen, semestre})
+    res.render("registerDatos/hubAlumno", {maestro, imagen, semestre, tecUni, ciudad, email, numTel})
 }
 
 
