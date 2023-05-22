@@ -60,7 +60,7 @@ rutas.post('/acti', pfp.single('pfp'), async function (req, res, next){
         let numTel = req.body.numTel;
         let birthday = req.body.birthday;
         let email = req.body.email;
-        let name = req.body.user
+        let user = req.body.user
 
         console.log(req.body)
         try {
