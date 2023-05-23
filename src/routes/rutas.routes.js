@@ -45,7 +45,7 @@ rutas.get('/explorar', explorar )
 
 rutas.get('/registerDatos' , requireLogin ,getViewRegister)
 
-rutas.get('/admin',requireLogin , admin)
+rutas.get('/admin', requireLogin , admin)
 rutas.post('/adminPost' ,adminPost)
 rutas.get('/hubAlumno' ,getViewHubAlumno)
 
