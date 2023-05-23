@@ -43,7 +43,7 @@ rutas.get('/', raiz);
 
 rutas.get('/explorar', explorar )
 
-rutas.get('/admin', admin)
+rutas.get('/admin',requireLogin , admin)
 rutas.post('/adminPost' ,adminPost)
 rutas.get('/registerDatos' , requireLogin ,getViewRegister)
 
