@@ -47,7 +47,7 @@ rutas.get('/registerDatos' , requireLogin ,getViewRegister)
 
 rutas.get('/admin' , admin)
 rutas.post('/adminPost' ,adminPost)
-rutas.get('/hubAlumno', requireLogin,getViewHubAlumno)
+rutas.get('/hubAlumno' ,getViewHubAlumno)
 
 rutas.post('/acti', pfp.single('pfp'), async function (req, res, next){
   
