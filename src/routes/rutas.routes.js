@@ -64,19 +64,22 @@ rutas.post('/acti', pfp.single('pfp'), async function (req, res, next){
         let birthday = req.body.birthday;
         let email = req.body.email;
         let user = req.body.user
+        //console.log(`el id es:`+idUser)
+        let [id] = await con.query(`select * from login where idUser=${idUser}`);
+        let nombreId = id[0].user
 
-        console.log(req.body)
+        /* console.log(req.body) */
         try {
           
          con.query(`UPDATE infoAlumnos set semestre='${semestre}', imagen = '${imagen}', materiasFav='${materiaFav}' ,maestrosFav = '${maestroFav}', tecUni = '${tecUni}', ciudad = '${ciudad}', email = '${email}', numTel = ${numTel}, cumple = '${birthday}' where idUser = '${idUser}'`)
          setTimeout(() => {
-            res.redirect(`/hubAlumno?semestre=${semestre}&imagen=${imagen}&materiasFav=${materiaFav}&maestrosFav=${maestroFav}&tecUni=${tecUni}&ciudad=${ciudad}&email=${email}&numTel=${numTel}&cumple=${birthday}&user=${user}`)
+            res.redirect(`/hubAlumno?semestre=${semestre}&imagen=${imagen}&materiasFav=${materiaFav}&maestrosFav=${maestroFav}&tecUni=${tecUni}&ciudad=${ciudad}&email=${email}&numTel=${numTel}&cumple=${birthday}&user=${nombreId}`)
          }, 1000);
         } catch (error) {
          
         }
-
-        console.log(req.body);
+/* 
+        console.log(req.body); */
 })
 
 //Ruta para subir imagenes al anuario
