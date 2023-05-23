@@ -7,7 +7,7 @@ import { credenciales } from "../controllers/login.controller.js";
 import { getViewRegister, getViewHubAlumno } from "../controllers/registrarDatos.controller.js";
 import { register, registerCredenciales } from "../controllers/register.controller.js";
 import { explorar } from "../controllers/explorar.controller.js";
-import { admin } from "../controllers/admin.controller.js";
+import { admin, adminPost } from "../controllers/admin.controller.js";
 import multer from "multer";
 const subida = multer({ dest: 'public/' })
 const pfp = multer({ dest: 'public/profilePic' })
@@ -44,6 +44,7 @@ rutas.get('/', raiz);
 rutas.get('/explorar', explorar )
 
 rutas.get('/admin', admin)
+rutas.post('/adminPost', adminPost)
 rutas.get('/registerDatos' , requireLogin ,getViewRegister)
 
 rutas.get('/hubAlumno' ,getViewHubAlumno)
