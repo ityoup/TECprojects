@@ -43,10 +43,10 @@ rutas.get('/', raiz);
 
 rutas.get('/explorar', explorar )
 
-rutas.get('/admin',requireLogin , admin)
-rutas.post('/adminPost' ,adminPost)
 rutas.get('/registerDatos' , requireLogin ,getViewRegister)
 
+rutas.get('/admin',requireLogin , admin)
+rutas.post('/adminPost' ,adminPost)
 rutas.get('/hubAlumno' ,getViewHubAlumno)
 
 rutas.post('/acti', pfp.single('pfp'), async function (req, res, next){
