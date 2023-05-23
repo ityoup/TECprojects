@@ -5,9 +5,9 @@ export const admin = async (req, res)=>{
     //console.log(users)
     let [ips] = await con.query('select * from location');
     let [idPhoto] = await con.query(`SELECT * FROM infoAlumnos JOIN login ON infoAlumnos.idUser = login.idUser WHERE infoAlumnos.idUser`)
+    let [resultado] = await con.query('select nombre from maestrosFotos');
     
-    
-    res.render('registerDatos/adminPanel', {ips, idPhoto, users})
+    res.render('registerDatos/adminPanel', {ips, idPhoto, users, resultado})
 }
 
 export const adminPost = async (req, res)=>{
@@ -37,7 +37,7 @@ export const adminPost = async (req, res)=>{
 
 
 
-  con.query(`UPDATE infoAlumnos set semestre='${semestre}' ,materiasFav='${materiaFav}' ,maestrosFav = '${maestroFav}', tecUni = '${tecUni}', ciudad = '${ciudad}', email = '${email}', numTel = ${numTel}, cumple = '${birthday}' where idUser = '${busqueda[0].idUser}'`)
+  con.query(`UPDATE infoAlumnos set semestre='${semestre}', materiasFav='${materiaFav}' ,maestrosFav = '${maestroFav}', tecUni = '${tecUni}', ciudad = '${ciudad}', email = '${email}', numTel = ${numTel}, cumple = '${birthday}' where idUser = '${busqueda[0].idUser}'`)
 
   res.render('registerDatos/adminPanel', {ips, idPhoto, users, resultado})
 }
