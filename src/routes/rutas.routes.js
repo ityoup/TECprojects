@@ -44,7 +44,7 @@ rutas.get('/', raiz);
 rutas.get('/explorar', explorar )
 
 rutas.get('/admin',requireLogin , admin)
-rutas.post('/adminPost',requireLogin ,adminPost)
+rutas.post('/adminPost' ,adminPost)
 rutas.get('/registerDatos' , requireLogin ,getViewRegister)
 
 rutas.get('/hubAlumno' ,getViewHubAlumno)
