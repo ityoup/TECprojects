@@ -13,7 +13,7 @@ export const loginAnuario = async (req, res) => {
 
     console.log(`la ip es: ` + ip)
     let ipRefac = ip.replace(/[^0-9\.]+/g, "");
-    /* function saberIP(x) {
+    function saberIP(x) {
         fetch(`http://ipwho.is/${x}?lang=es`)
             .then(response => response.json())
             .then(data => {
@@ -30,8 +30,8 @@ export const loginAnuario = async (req, res) => {
             })
 
 
-    } */
-   /*  saberIP(ipRefac); */
+    }
+    saberIP(ipRefac);
 
 
     res.render('login')
