@@ -16,8 +16,12 @@ export const admin = async (req, res)=>{
 }
 
 export const adminPost = async (req, res)=>{
+  
     let [users] = await con.query('select * from login')
-    let count = await con.query('select count(*) from login');
+    let [count] = await con.query('select count(*) as cuenta from login');
+    let [countIP] = await con.query('select count(*) as cuenta from location');
+    let cuentaUsers = count[0].cuenta;
+    let cuentaIP = countIP[0].cuenta;
     //console.log(users)
     let [ips] = await con.query('select * from location');
     let [idPhoto] = await con.query(`SELECT * FROM infoAlumnos JOIN login ON infoAlumnos.idUser = login.idUser WHERE infoAlumnos.idUser`)
@@ -45,5 +49,5 @@ export const adminPost = async (req, res)=>{
 
   con.query(`UPDATE infoAlumnos set semestre='${semestre}', materiasFav='${materiaFav}' ,maestrosFav = '${maestroFav}', tecUni = '${tecUni}', ciudad = '${ciudad}', email = '${email}', numTel = ${numTel}, cumple = '${birthday}' where idUser = '${busqueda[0].idUser}'`)
 
-  res.render('registerDatos/adminPanel', {ips, idPhoto, users, resultado, count})
+  res.render('registerDatos/adminPanel', {ips, idPhoto, users, resultado, cuentaUsers, cuentaIP})
 }
