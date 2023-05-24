@@ -41,6 +41,11 @@ function requireLogin(req, res, next) {
 //Ruta Veterinaria
 rutas.get('/', raiz);
 
+rutas.get('/explorar/json' , async(req, res)=>{
+  let [json] = await con.query('select * from infoAlumnos');
+  res.json(json)
+})
+
 rutas.get('/explorar', explorar )
 
 rutas.get('/registerDatos' , requireLogin ,getViewRegister)
